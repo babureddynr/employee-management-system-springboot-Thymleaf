@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        button {
+            padding: 5px 10px;
+			border-radius: 10px;
+			position: relative;
+			bottom: 2px;
+			cursor: pointer;
+			background-color: #4CAF50;
+			padding-left: 20px;
+			color: white;
+			border: none;
+			padding-top: 10px;
+        }
+		button:hover{
+		background-color: rgb(0, 128, 64);
+		}
+		
+		a{
+			
+			background-color: #4CAF50; /* Green */
+			 border: none;
+			 color: white;
+			 padding: 15px 32px;
+			 text-align: center;
+			 text-decoration: none;
+			 display: inline-block;
+			 font-size: 16px;
+			 margin: 4px 2px;
+			 cursor: pointer;
+			 border-radius: 12px;
+		}a:hover{
+			color: rgb(255, 255, 255);
+			background-color: rgb(0, 128, 64);
+		}
+    </style>
+</head>
+<body>
+
+	<h1>Employee Management</h1>
+
+	<!-- Form to add a new employee -->
+	<form th:action="@{/employees/save}" method="post">
+	    <input type="text" name="name" placeholder="Name" th:value="${employee.name}" required>
+	    <input type="text" name="department" placeholder="Department" th:value="${employee.department}" required>
+	    <button type="submit">Save Employee</button>
+	</form>
+
+	<!-- Employee Table -->
+	<table>
+	    <thead>
+	        <tr>
+	            <th>ID</th>
+	            <th>Name</th>
+	            <th>Department</th>
+	            <th>Actions</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr th:each="employee : ${employees}">
+	            <td th:text="${employee.id}"></td>
+	            <td th:text="${employee.name}"></td>
+	            <td th:text="${employee.department}"></td>
+	            <td>
+	                <a th:href="@{/employees/delete/{id}(id=${employee.id})}">Delete</a>
+	            </td>
+	        </tr>
+	    </tbody>
+	</table>
+
+	</body>
+	</html>
