@@ -1,6 +1,9 @@
 
 # Employee Management System - Spring Boot & Thymeleaf 🧑‍💼👨‍💻
 
+
+[View Live Demo](https://babureddynr.github.io/spring-html-pages/empthymleaf.html)
+
 A simple Employee Management System built using **Spring Boot** and **Thymeleaf** for managing employee data via a web interface. This project demonstrates basic CRUD operations (Create, Read, Update, Delete) with a clean and dynamic UI using Thymeleaf templates.
 
 ## 🚀 Live Demo
