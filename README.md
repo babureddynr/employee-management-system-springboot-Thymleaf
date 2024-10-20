@@ -5,7 +5,7 @@ A simple Employee Management System built using **Spring Boot** and **Thymeleaf*
 
 ## 🚀 Live Demo
 
-![Live Demo Screenshot](https://github.com/babureddynr/employee-management-system-springboot-Thymleaf/blob/main/demo_screenshot.png)
+![Live Demo Screenshot](https://github.com/babureddynr/employee-management-system-springboot-Thymleaf/blob/main/localhost_8080_employees.png)
 
 > _Screenshot of the live running demo of Employee Management System_.
 
